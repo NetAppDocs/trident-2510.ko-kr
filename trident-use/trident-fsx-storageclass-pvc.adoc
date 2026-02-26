@@ -1,0 +1,211 @@
+---
+sidebar: sidebar 
+permalink: trident-use/trident-fsx-storageclass-pvc.html 
+keywords: Amazon FSx for NetApp ONTAP, FSx for ONTAP, deploy Trident, integrate Trident, Trident 
+summary: 'Amazon FSx for NetApp ONTAP와 함께 Trident를 사용하면 Amazon Elastic Kubernetes Service(EKS)에서 실행되는 Kubernetes 클러스터가 ONTAP에서 지원하는 블록 및 파일 영구 볼륨을 프로비저닝할 수 있습니다.' 
+---
+= 스토리지 클래스 및 PVC 구성
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Kubernetes StorageClass 오브젝트를 구성하고 스토리지 클래스를 생성하여 Trident에 볼륨을 프로비저닝하는 방법을 지시합니다. 구성된 Kubernetes StorageClass를 사용하는 PersistentVolumeClaim(PVC)을 생성하여 PV에 대한 액세스를 요청합니다. 그런 다음 PV를 파드에 마운트할 수 있습니다.
+
+
+
+== 스토리지 클래스를 생성합니다
+
+
+
+=== Kubernetes StorageClass 오브젝트 구성
+
+ https://kubernetes.io/docs/concepts/storage/storage-classes/["Kubernetes StorageClass 오브젝트"^] 객체는 해당 클래스에 사용되는 프로비저너로 Trident를 식별하고 Trident에 볼륨을 프로비저닝하는 방법을 지시합니다. 이 예제를 사용하여 NFS를 사용하는 볼륨에 대한 Storageclass를 설정하십시오(전체 속성 목록은 아래 Trident 속성 섹션을 참조하십시오):
+
+[source, YAML]
+----
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ontap-gold
+provisioner: csi.trident.netapp.io
+parameters:
+  backendType: "ontap-nas"
+  provisioningType: "thin"
+  snapshots: "true"
+----
+iSCSI를 사용하여 볼륨용 Storageclass를 설정하려면 다음 예를 사용하십시오.
+
+[source, YAML]
+----
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ontap-gold
+provisioner: csi.trident.netapp.io
+parameters:
+  backendType: "ontap-san"
+  provisioningType: "thin"
+  snapshots: "true"
+----
+AWS Bottlerocket에서 NFSv3 볼륨을 프로비저닝하려면 스토리지 클래스에 필요한  `mountOptions`을(를) 추가하십시오.
+
+[source, YAML]
+----
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ontap-gold
+provisioner: csi.trident.netapp.io
+parameters:
+  backendType: "ontap-nas"
+  media: "ssd"
+  provisioningType: "thin"
+  snapshots: "true"
+mountOptions:
+  - nfsvers=3
+  - nolock
+----
+스토리지 클래스가 link:../trident-reference/objects.html["Kubernetes 및 Trident 객체"]와 상호 작용하는 방법 및 Trident가 볼륨을 프로비저닝하는 방식을 제어하는 매개변수에 대한 자세한 내용은  `PersistentVolumeClaim`를 참조하십시오.
+
+
+
+=== 스토리지 클래스를 생성합니다
+
+.단계
+. 이것은 Kubernetes 객체이므로 `kubectl`을 사용하여 Kubernetes에서 생성합니다.
++
+[source, console]
+----
+kubectl create -f storage-class-ontapnas.yaml
+----
+. 이제 Kubernetes와 Trident 모두에서 *basic-csi* 스토리지 클래스가 표시되어야 하며, Trident가 백엔드에서 풀을 검색했을 것입니다.
++
+[source, console]
+----
+kubectl get sc basic-csi
+----
+
+
+[listing]
+----
+NAME         PROVISIONER             AGE
+basic-csi    csi.trident.netapp.io   15h
+
+----
+
+
+== PVC를 생성합니다
+
+ https://kubernetes.io/docs/concepts/storage/persistent-volumes["_PersistentVolumeClaim_"^](PVC)는 클러스터의 PersistentVolume에 대한 액세스 요청입니다.
+
+PVC는 특정 크기의 스토리지 또는 액세스 모드를 요청하도록 구성할 수 있습니다. 연결된 StorageClass를 사용하여 클러스터 관리자는 PersistentVolume 크기 및 액세스 모드 외에도 성능이나 서비스 수준과 같은 다양한 요소를 제어할 수 있습니다.
+
+PVC를 생성한 후에는 볼륨을 포드에 마운트할 수 있습니다.
+
+
+
+=== 샘플 매니페스트
+
+.PersistentVolumeClaim 샘플 매니페스트
+[%collapsible]
+====
+이 예에서는 기본 PVC 구성 옵션을 보여 줍니다.
+
+.RWX 액세스가 있는 PVC
+이 예제는 RWX 액세스 권한이 있는 기본 PVC를 보여주며, 이는 StorageClass라는 이름 `basic-csi`과 연결되어 있습니다.
+
+[source, YAML]
+----
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-storage
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: ontap-gold
+----
+.iSCSI를 사용하는 PVC 예
+이 예제는 RWO 액세스가 가능한 iSCSI용 기본 PVC를 보여주며, 이는 StorageClass라는 이름의 `protection-gold`와(과) 연결되어 있습니다.
+
+[source, YAML]
+----
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+name: pvc-san
+spec:
+accessModes:
+  - ReadWriteOnce
+resources:
+  requests:
+    storage: 1Gi
+storageClassName: protection-gold
+----
+====
+
+
+=== PVC 생성
+
+.단계
+. PVC를 생성합니다.
++
+[source, console]
+----
+kubectl create -f pvc.yaml
+----
+. PVC 상태를 확인합니다.
++
+[source, console]
+----
+kubectl get pvc
+----
+
+
+[listing]
+----
+NAME        STATUS VOLUME     CAPACITY ACCESS MODES STORAGECLASS AGE
+pvc-storage Bound  pv-name 2Gi      RWO                       5m
+----
+스토리지 클래스가 link:../trident-reference/objects.html["Kubernetes 및 Trident 객체"]와 상호 작용하는 방법 및 Trident가 볼륨을 프로비저닝하는 방식을 제어하는 매개변수에 대한 자세한 내용은  `PersistentVolumeClaim`를 참조하십시오.
+
+
+
+== Trident 특성
+
+이러한 매개변수는 특정 유형의 볼륨을 프로비저닝하는 데 사용할 Trident 관리 스토리지 풀을 결정합니다.
+
+[cols=",,,,,"]
+|===
+| 속성 | 유형 | 값 | 제공 | 요청 | 지원 대상: 
+
+
+| 미디어^1^ | 문자열 | HDD, 하이브리드, SSD | 풀에는 이러한 유형의 미디어가 포함되어 있습니다. 하이브리드는 둘 다를 의미합니다 | 지정된 미디어 유형 | ontap-nas, ontap-nas-economy, ontap-nas-flexgroup, ontap-san, solidfire-san 
+
+
+| provisioningType | 문자열 | 씬, 씩 | 풀은 이 프로비저닝 방식을 지원합니다 | 프로비저닝 방법이 지정되었습니다 | thick: 모든 ONTAP, thin: 모든 ONTAP 및 SolidFire-SAN 
+
+
+| backendType | 문자열  a| 
+ontap-nas, ontap-nas-economy, ontap-nas-flexgroup, ontap-san, solidfire-san, azure-netapp-files, ontap-san-economy
+| 풀은 이러한 유형의 백엔드에 속합니다 | 지정된 백엔드 | 모든 드라이버 
+
+
+| 스냅샷 | 불 | 참, 거짓 | 풀은 스냅샷이 있는 볼륨을 지원합니다 | 스냅샷이 활성화된 볼륨 | ontap-nas, ontap-san, solidfire-san 
+
+
+| 클론 | 불 | 참, 거짓 | 풀은 볼륨 복제를 지원합니다 | 클론이 활성화된 볼륨 | ontap-nas, ontap-san, solidfire-san 
+
+
+| 암호화 | 불 | 참, 거짓 | 스토리지 풀은 암호화된 볼륨을 지원합니다. | 암호화가 설정된 볼륨 | ontap-nas, ontap-nas-economy, ontap-nas-flexgroups, ontap-san 
+
+
+| IOPS | int | 양의 정수 | 풀은 이 범위의 IOPS를 보장할 수 있습니다 | 볼륨에서 이러한 IOPS를 보장합니다 | SolidFire-SAN 
+|===
+^1^: ONTAP Select 시스템에서 지원되지 않습니다
