@@ -6085,4 +6085,5 @@
   <block id="e8ce47501426b8525633fc30daf17d7a" category="sidebar">볼륨 이름 사용자 지정</block>
   <block id="f18a50f02f48551895d57b81dd288142" category="sidebar">네임스페이스 간 NFS 볼륨 공유</block>
   <block id="62486fa65fc31c383ace8989549632ad" category="sidebar">스냅샷 사용</block>
+  <block id="f45ace2e96672a5ca55ea6bac48b9865" category="admonition">##애플리케이션에서 여러 네임스페이스를 사용하고 이러한 네임스페이스에 동일한 이름의 PVC가 있는 경우 스냅샷 복원 작업(제자리 복원 및 새 네임스페이스로의 복원 모두)이 올바르게 작동하지 않습니다. 복원된 모든 볼륨에 각 네임스페이스에 맞는 올바른 데이터 대신 동일한 데이터가 저장됩니다. 스냅샷 복원 대신 백업 복원을 사용하거나 이 문제가 해결된 버전 26.02 이상으로 업그레이드하십시오.##</block>
 </blocks>
