@@ -33,7 +33,7 @@ Trident는 버전에 따라 세 가지 수준의 지원을 제공합니다. link
 
 
  a| 
-link:https://docs.netapp.com/us-en/trident/index.html["25.10"^]
+link:https://docs.netapp.com/us-en/trident-2510/index.html["25.10"^]
 | 2026년 10월 | 2027년 10월 | 2028년 10월 
 
 
