@@ -2323,13 +2323,8 @@
   <block id="2358fb4006fff416413cb9bfc04e4b73" category="list-text">장시간 소요되는 복원 작업의 경우 AWS 세션 토큰 만료 기간이 충분한지 확인하십시오. 복원 작업 중에 토큰이 만료되면 작업이 실패할 수 있습니다.</block>
   <block id="df710f89ebb9e663bd3d66607a0bf413" category="inline-link">AWS 문서</block>
   <block id="f3aa7db516c38030a276a5895520407a" category="list-text">AWS 리소스에 대한 자격 증명 관련 자세한 내용은 <block ref="968595e57d50a64e3fbe0f06bc16cb91" category="inline-link-rx"></block>를 참조하십시오.</block>
-  <block id="cfb3749b52f4ce0c21dcdc3a9fce80f2" category="list-text">Trident Protect CLI 플러그인을 사용하여 타겟 클러스터에서 AppVault CR의 가용성을 확인합니다.</block>
-  <block id="1ff83a5266e9e025c2984e0c10dea90e" category="admonition">애플리케이션 복원에 사용할 네임스페이스가 타겟 클러스터에 있는지 확인합니다.</block>
-  <block id="8d433ae9a21c49e9e5433ebd408605c0" category="list-text">타겟 클러스터에서 사용 가능한 AppVault의 백업 콘텐츠를 확인합니다.</block>
   <block id="378e6f0ba7080535a4462b5311befb40" category="paragraph">이 명령을 실행하면 AppVault에서 사용 가능한 백업이 표시되며, 여기에는 백업이 생성된 클러스터, 해당 애플리케이션 이름, 타임스탬프 및 아카이브 경로가 포함됩니다.</block>
   <block id="52b5830420efb96c3a91beb52bac3b23" category="paragraph">*예시 출력:*</block>
-  <block id="053aba80de03f3fdf626d1c858342330" category="list-text">AppVault 이름과 아카이브 경로를 사용하여 타겟 클러스터에 애플리케이션을 복원합니다.</block>
-  <block id="fceebbe32c1f7b24c54d6a4e8a0fa776" category="admonition">BackupRestore CR을 사용할 수 없는 경우 2단계에서 언급한 명령을 사용하여 백업 내용을 볼 수 있습니다.</block>
   <block id="4ef55c1fec2de9218af40d16cbc021a4" category="list-text">다음 명령을 사용하여 애플리케이션을 복원하고 대괄호 안의 값을 사용자 환경의 정보로 바꿉니다. namespace-mapping 인수는 콜론으로 구분된 네임스페이스를 사용하여 소스 네임스페이스를 source1:dest1,source2:dest2 형식으로 올바른 타겟 네임스페이스에 매핑합니다. 예를 들면 다음과 같습니다.</block>
   <block id="db4c6bfd26488f4d6ab2ec6129b067d8" category="section-title">스냅샷에서 다른 네임스페이스로 복원</block>
   <block id="00a11b317e9c8f9d94e106859445f95b" category="paragraph">스냅샷에서 사용자 지정 리소스(CR) 파일을 사용하여 다른 네임스페이스 또는 원래 소스 네임스페이스로 데이터를 복원할 수 있습니다. SnapshotRestore CR을 사용하여 스냅샷을 다른 네임스페이스로 복원하면 Trident Protect는 새 네임스페이스에 애플리케이션을 복원하고 복원된 애플리케이션에 대한 애플리케이션 CR을 생성합니다. 복원된 애플리케이션을 보호하려면 온디맨드 백업 또는 스냅샷을 생성하거나 보호 일정을 설정하십시오.</block>
@@ -6062,4 +6057,12 @@
   <block id="6cb6457c77d43e645e6ad531fd87c3e7" category="admonition">네임스페이스 범위 연산자를 사용하여 설치된 Trident(버전 20.07~20.10)에서 업그레이드하려면 설치된 Trident 버전에 대한 업그레이드 지침을 사용하십시오.</block>
   <block id="c6e5aff4c5e70680da18857e52172127" category="list-text">4개 릴리스 기간 외의 버전에서 업그레이드하는 경우 여러 단계를 거쳐 업그레이드하십시오. 업그레이드하려는 이전 버전의 업그레이드 지침을 사용하여 4개 릴리스 기간에 맞는 최신 릴리스로 업그레이드하십시오. 예를 들어 23.07 버전을 실행 중이고 25.06으로 업그레이드하려는 경우:</block>
   <block id="bdb3932167e7866c6c505613dc0f7cb7" category="paragraph">NetApp은 제품과 서비스를 지속적으로 개선하고 향상시키고 있습니다. 다음은 Trident의 최신 기능 중 일부입니다. 이전 릴리스에 대한 내용은 이전 버전의 설명서를 참조하십시오.</block>
+  <block id="23dc68eb3282da7f8baebc1f7c84fff9" category="inline-link">지원 수명 주기 페이지</block>
+  <block id="df26dce8cff00211af89034cce0d1904" category="admonition">최신 Trident 버전 지원 일정은<block ref="605c91b6d04b068d1f5e6199e80f3518" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="4daca3334f00c4ec7830e587d1e0269d" category="list-text">Trident Protect를 설치하려면 Helm 4.x 이상이 필요합니다.</block>
+  <block id="43da129a49cd39591bce7ddda6f0dc82" category="list-text">Trident Protect CLI 플러그인을 사용하여 타겟 클러스터에 AppVault CR이 있는지 확인합니다.</block>
+  <block id="ad00af2208d1570d2b6ca4c83cbbb61e" category="admonition">타겟 클러스터에 AppVault CR이 없는 경우 <block ref="5f86f4618afc0bb72a8693bca73e9890" category="inline-link-macro-rx"></block>의 단계에 따라 생성하십시오.</block>
+  <block id="b104127df6a8992a1e7bad2dbd1aad7c" category="list-text">타겟 클러스터에서 사용 가능한 AppVault의 백업 콘텐츠를 확인하고 복원할 백업의<block ref="bf8f430bcd54ced8b34c5fd6d4b41d3c" prefix=" " category="inline-code"></block>을 기록해 두십시오.</block>
+  <block id="3f170f167274ed66c26965c774034d2e" category="list-text">AppVault 이름과 아카이브 경로를 사용하여 타겟 클러스터에 애플리케이션을 복원합니다. 참고: CR을 사용하는 경우 애플리케이션 복원에 사용할 네임스페이스가 타겟 클러스터에 있는지 확인하십시오.</block>
+  <block id="5566fd919e0cd2daefbf9fbd55ec09e3" category="list-text">*spec.appArchivePath*: (_필수_) AppVault 내에서 백업 콘텐츠가 저장되는 경로입니다. 2단계의 명령을 사용하여 백업 콘텐츠를 확인하고<block ref="bf8f430bcd54ced8b34c5fd6d4b41d3c" prefix=" " category="inline-code"></block>복원하려는 백업을 찾으십시오.</block>
 </blocks>

@@ -297,7 +297,7 @@ tridentctl-protect create backupinplacerestore <my_restore_name> \
 
 
 .단계
-. Trident Protect CLI 플러그인을 사용하여 타겟 클러스터에서 AppVault CR의 가용성을 확인합니다.
+. Trident Protect CLI 플러그인을 사용하여 타겟 클러스터에 AppVault CR이 있는지 확인합니다.
 +
 [source, console]
 ----
@@ -305,9 +305,9 @@ tridentctl-protect get appvault --context <destination_cluster_name>
 ----
 +
 
-NOTE: 애플리케이션 복원에 사용할 네임스페이스가 타겟 클러스터에 있는지 확인합니다.
+NOTE: 타겟 클러스터에 AppVault CR이 없는 경우 link:trident-protect-appvault-custom-resources.html["Trident Protect AppVault 객체를 사용하여 버킷을 관리하세요."]의 단계에 따라 생성하십시오.
 
-. 타겟 클러스터에서 사용 가능한 AppVault의 백업 콘텐츠를 확인합니다.
+. 타겟 클러스터에서 사용 가능한 AppVault의 백업 콘텐츠를 확인하고 복원할 백업의 `appArchivePath`을 기록해 두십시오.
 +
 [source, console]
 ----
@@ -332,7 +332,7 @@ tridentctl-protect get appvaultcontent <appvault_name> \
 | production1 | wordpress | backup | wordpress-bkup-2| 2024-10-30 08:37:40 (UTC)| backuppath2 |
 +-------------+-----------+--------+-----------------+--------------------------+-------------+
 ----
-. AppVault 이름과 아카이브 경로를 사용하여 타겟 클러스터에 애플리케이션을 복원합니다.
+. AppVault 이름과 아카이브 경로를 사용하여 타겟 클러스터에 애플리케이션을 복원합니다. 참고: CR을 사용하는 경우 애플리케이션 복원에 사용할 네임스페이스가 타겟 클러스터에 있는지 확인하십시오.
 
 
 [role="tabbed-block"]
@@ -344,16 +344,7 @@ tridentctl-protect get appvaultcontent <appvault_name> \
 +
 ** *metadata.name*: (_필수_) 이 사용자 지정 리소스의 이름입니다. 환경에 맞는 고유하고 적절한 이름을 선택하세요.
 ** *spec.appVaultRef*: (_필수_) 백업 콘텐츠가 저장되는 AppVault의 이름입니다.
-** *spec.appArchivePath*: 백업 콘텐츠가 저장되는 AppVault 내부 경로입니다. 다음 명령을 사용하여 이 경로를 찾을 수 있습니다.
-+
-[source, console]
-----
-kubectl get backups <BACKUP_NAME> -n my-app-namespace -o jsonpath='{.status.appArchivePath}'
-----
-+
-
-NOTE: BackupRestore CR을 사용할 수 없는 경우 2단계에서 언급한 명령을 사용하여 백업 내용을 볼 수 있습니다.
-
+** *spec.appArchivePath*: (_필수_) AppVault 내에서 백업 콘텐츠가 저장되는 경로입니다. 2단계의 명령을 사용하여 백업 콘텐츠를 확인하고 `appArchivePath`복원하려는 백업을 찾으십시오.
 ** *spec.namespaceMapping*: 복원 작업의 소스 네임스페이스를 타겟 네임스페이스로 매핑합니다.  `my-source-namespace` 및  `my-destination-namespace`를 사용자 환경의 정보로 교체하십시오.
 +
 예를 들면 다음과 같습니다.
