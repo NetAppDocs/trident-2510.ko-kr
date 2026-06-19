@@ -12,7 +12,7 @@ summary: Kubernetes를 처음 사용하는 경우 Kubernetes 설치 지침을 �
 
 
 [role="lead"]
-Trident를 설치하고 몇 단계만 거치면 스토리지 리소스 관리를 시작할 수 있습니다. 시작하기 전에 link:requirements.html["Trident 요구 사항"]을(를) 검토하십시오.
+Trident를 설치하고 몇 단계만 거치면 스토리지 리소스 관리를 시작할 수 있습니다. 시작하기 전에 link:../trident-get-started/requirements.html["Trident 요구 사항"]을(를) 검토하십시오.
 
 
 NOTE: Docker의 경우 link:../trident-docker/deploy-docker.html["Docker용 Trident"]을(를) 참조하십시오.
@@ -29,7 +29,7 @@ link:../trident-use/worker-node-prep.html["작업자 노드를 준비합니다"]
 Trident는 다양한 환경과 조직에 최적화된 여러 설치 방법과 모드를 제공합니다.
 
 [role="quick-margin-para"]
-link:../trident-get-started/kubernetes-deploy.html["Trident 설치"]
+link:../trident-install/kubernetes-deploy.html["Trident 설치"]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3"] 백엔드 생성
 [role="quick-margin-para"]

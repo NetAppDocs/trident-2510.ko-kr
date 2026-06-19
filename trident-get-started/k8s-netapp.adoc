@@ -33,7 +33,7 @@ NOTE: Trident는 위에 언급된 모든 ONTAP 배포 모델을 지원합니다.
 
 == Cloud Volumes ONTAP
 
-http://cloud.netapp.com/ontap-cloud?utm_source=GitHub&utm_campaign=Trident["Cloud Volumes ONTAP"^]는 클라우드에서 ONTAP 데이터 관리 소프트웨어를 실행하는 소프트웨어 전용 스토리지 어플라이언스입니다. Cloud Volumes ONTAP를 프로덕션 워크로드, 재해 복구, DevOps, 파일 공유 및 데이터베이스 관리에 사용할 수 있습니다. 스토리지 효율성, 고가용성, 데이터 복제, 데이터 계층화 및 애플리케이션 일관성을 제공하여 엔터프라이즈 스토리지를 클라우드로 확장합니다.
+Cloud Volumes ONTAP은 클라우드에서 ONTAP 데이터 관리 소프트웨어를 실행하는 소프트웨어 전용 스토리지 어플라이언스입니다. Cloud Volumes ONTAP을 프로덕션 워크로드, 재해 복구, DevOps, 파일 공유 및 데이터베이스 관리에 사용할 수 있습니다. 스토리지 효율성, 고가용성, 데이터 복제, 데이터 계층화 및 애플리케이션 일관성을 제공하여 엔터프라이즈 스토리지를 클라우드로 확장합니다.
 
 
 
@@ -65,4 +65,4 @@ https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"^]는 Net
 
 == Google Cloud NetApp Volumes
 
-https://cloud.netapp.com/cloud-volumes-service-for-gcp?utm_source=GitHub&utm_campaign=Trident["Google Cloud NetApp Volumes"^]는 NFS를 통해 NAS 볼륨을 제공하는 클라우드 네이티브 파일 서비스로, 올플래시 성능을 제공합니다. 이 서비스를 통해 기존 애플리케이션을 포함한 모든 워크로드를 GCP 클라우드에서 실행할 수 있습니다. 일관된 고성능, 즉각적인 클론 생성, 데이터 보호 및 Google Compute Engine(GCE) 인스턴스에 대한 안전한 액세스를 제공하는 완전 관리형 서비스입니다.
+https://www.netapp.com/google-cloud/netapp-volumes/["Google Cloud NetApp Volumes"^]는 올플래시 성능으로 NFS를 통해 NAS 볼륨을 제공하는 클라우드 네이티브 파일 서비스입니다. 이 서비스를 통해 기존 애플리케이션을 포함한 모든 워크로드를 GCP 클라우드에서 실행할 수 있습니다. 일관된 고성능, 즉각적인 클론 생성, 데이터 보호 및 Google Compute Engine(GCE) 인스턴스에 대한 안전한 액세스를 제공하는 완전 관리형 서비스입니다.

@@ -18,7 +18,7 @@ Trident 오퍼레이터를 사용하여 Trident를 업그레이드하기 전에 
 
 == Trident 운영자 업그레이드 처리
 
-Trident를 설치 및 업그레이드하는 많은 link:../trident-get-started/kubernetes-deploy.html["Trident 운영자 사용의 이점"] 중 하나는 기존에 마운트된 볼륨에 영향을 주지 않고 Trident 및 Kubernetes 객체를 자동으로 처리한다는 점입니다. 이러한 방식으로 Trident는 다운타임 없이 업그레이드를 지원할 수 있습니다(link:https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/["_롤링 업데이트_"^]). 특히 Trident 오퍼레이터는 Kubernetes 클러스터와 통신하여 다음을 수행합니다.
+Trident를 설치 및 업그레이드하는 많은 link:../trident-install/kubernetes-deploy.html["Trident 운영자 사용의 이점"] 중 하나는 기존에 마운트된 볼륨에 영향을 주지 않고 Trident 및 Kubernetes 객체를 자동으로 처리한다는 점입니다. 이러한 방식으로 Trident는 다운타임 없이 업그레이드를 지원할 수 있습니다(link:https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/["_롤링 업데이트_"^]). 특히 Trident 오퍼레이터는 Kubernetes 클러스터와 통신하여 다음을 수행합니다.
 
 * Trident Controller 배포 및 노드 DaemonSet을 삭제하고 다시 생성합니다.
 * Trident Controller Pod와 Trident Node Pod를 새 버전으로 교체하십시오.

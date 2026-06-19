@@ -107,5 +107,5 @@ Trident에 대한 도움이 필요하면 `tridentctl logs -a -n trident`을 사�
 == 자세한 내용은
 
 * link:https://github.com/NetApp/trident["Trident 리소스"^]
-* link:https://cloud.netapp.com/kubernetes-hub["Kubernetes Hub"^]
+* link:https://www.netapp.com/console/["Kubernetes Hub"^]
 

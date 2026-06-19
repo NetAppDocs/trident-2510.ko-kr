@@ -12,7 +12,7 @@ summary: 운영자를 사용하여 기존 Trident 설치를 쉽게 업그레이�
 
 
 [role="lead"]
-Trident 운영자를 사용하여 수동으로 또는 Helm을 통해 Trident를 업그레이드할 수 있습니다. Trident 운영자 설치에서 다른 Trident 운영자 설치로 업그레이드하거나  `tridentctl` 설치에서 Trident 운영자 버전으로 업그레이드할 수 있습니다. Trident 운영자 설치를 업그레이드하기 전에 link:upgrade-trident.html#select-an-upgrade-method["업그레이드 방법을 선택하세요"]를 검토하십시오.
+Trident 운영자를 사용하여 수동으로 또는 Helm을 통해 Trident를 업그레이드할 수 있습니다. Trident 운영자 설치에서 다른 Trident 운영자 설치로 업그레이드하거나  `tridentctl` 설치에서 Trident 운영자 버전으로 업그레이드할 수 있습니다. Trident 운영자 설치를 업그레이드하기 전에 link:upgrade-trident.html#step-3-select-an-upgrade-method["업그레이드 방법을 선택하세요"]를 검토하십시오.
 
 
 
@@ -26,7 +26,6 @@ NOTE: 네임스페이스 범위 연산자를 사용하여 설치된 Trident(버�
 .이 작업 정보
 Trident는 Kubernetes 버전에 맞는 오퍼레이터를 설치하고 관련 객체를 생성하는 데 사용할 수 있는 번들 파일을 제공합니다.
 
-* Kubernetes 1.24를 실행하는 클러스터의 경우 link:https://github.com/NetApp/trident/tree/stable/v25.02/deploy/bundle_pre_1_25.yaml["bundle_pre_1_25.yaml"^]을(를) 사용하십시오.
 * Kubernetes 1.25 이상 버전을 실행하는 클러스터의 경우 link:https://github.com/NetApp/trident/tree/stable/v25.02/deploy/bundle_post_1_25.yaml["bundle_post_1_25.yaml"^]를 사용하십시오.
 
 
@@ -85,7 +84,7 @@ helm mapkubeapis trident  --namespace trident
 
 
 .단계
-. link:../trident-get-started/kubernetes-deploy-helm.html#deploy-the-trident-operator-and-install-trident-using-helm["Helm을 사용하여 Trident를 설치했습니다"]한 경우  `helm upgrade trident netapp-trident/trident-operator --version 100.2506.0`를 사용하여 한 단계로 업그레이드할 수 있습니다. Helm 리포지토리를 추가하지 않았거나 업그레이드에 사용할 수 없는 경우:
+. link:../trident-install/kubernetes-deploy-helm.html#deploy-the-trident-operator-and-install-trident-using-helm["Helm을 사용하여 Trident를 설치했습니다"]한 경우  `helm upgrade trident netapp-trident/trident-operator --version 100.2506.0`를 사용하여 한 단계로 업그레이드할 수 있습니다. Helm 리포지토리를 추가하지 않았거나 업그레이드에 사용할 수 없는 경우:
 +
 .. 최신 Trident 릴리스를 link:https://github.com/NetApp/trident/releases/latest["GitHub의 _Assets_ 섹션"^]에서 다운로드하십시오.
 ..  `helm upgrade` 명령을 사용합니다. 여기서  `trident-operator-25.10.0.tgz`는 업그레이드할 버전을 나타냅니다.
@@ -110,7 +109,7 @@ NOTE: 초기 설치 중에 사용자 지정 옵션(예: Trident 및 CSI 이미�
  `tridentctl` 설치에서 Trident 운영자의 최신 릴리스로 업그레이드할 수 있습니다. 기존 백엔드와 PVC는 자동으로 사용할 수 있습니다.
 
 
-NOTE: 설치 방법을 전환하기 전에 link:../trident-get-started/kubernetes-deploy.html#moving-between-installation-methods["설치 방법 간 이동"]을(를) 검토하십시오.
+NOTE: 설치 방법을 전환하기 전에 link:../trident-install/kubernetes-deploy.html#moving-between-installation-methods["설치 방법 간 이동"]을(를) 검토하십시오.
 
 .단계
 . 최신 Trident 릴리스를 다운로드하세요.

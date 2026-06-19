@@ -170,6 +170,5 @@ Usage:
 
 교차 네임스페이스 볼륨 액세스에 대한 자세한 내용은 다음을 참조하십시오.
 
-* link:https://cloud.netapp.com/blog/astra-blg-sharing-volumes-between-namespaces-say-hello-to-cross-namespace-volume-access["네임스페이스 간 볼륨 공유: 네임스페이스 간 볼륨 액세스를 경험해 보세요"^]를 방문하십시오.
 * link:https://media.netapp.com/page/9071d19d-1438-5ed3-a7aa-ea4d73c28b7f/solutions-products["NetAppTV"^]에서 데모를 시청하십시오.
 

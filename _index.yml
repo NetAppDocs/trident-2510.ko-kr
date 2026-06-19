@@ -26,9 +26,9 @@ indexpage:
   - title: Trident 구축
     links:
     - title: Trident 운영자를 사용하여 배포하세요
-      url: "/trident-get-started/kubernetes-deploy-operator.html"
+      url: "/trident-install/kubernetes-deploy-operator.html"
     - title: tridentctl을 사용하여 배포합니다
-      url: "/trident-get-started/kubernetes-deploy-tridentctl.html"
+      url: "/trident-install/kubernetes-deploy-tridentctl.html"
     - title: Docker용 Trident 배포
       url: "/trident-docker/deploy-docker.html"
   - title: Trident 업그레이드

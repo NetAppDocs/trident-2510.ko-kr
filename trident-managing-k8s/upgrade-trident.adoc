@@ -73,7 +73,7 @@ Trident를 원래 설치하는 데 사용한 버전을 확인하려면:
 
 == 3단계: 업그레이드 방법 선택
 
-일반적으로 초기 설치에 사용했던 것과 동일한 방법으로 업그레이드하는 것이 좋지만, link:../trident-get-started/kubernetes-deploy.html#moving-between-installation-methods["설치 방법 간 이동"]. Trident를 업그레이드하는 두 가지 옵션이 있습니다.
+일반적으로 초기 설치에 사용했던 것과 동일한 방법으로 업그레이드하는 것이 좋지만, link:../trident-install/kubernetes-deploy.html#moving-between-installation-methods["설치 방법 간 이동"]. Trident를 업그레이드하는 두 가지 옵션이 있습니다.
 
 * link:upgrade-operator.html["Trident 운영자를 사용하여 업그레이드하세요"]
 +
