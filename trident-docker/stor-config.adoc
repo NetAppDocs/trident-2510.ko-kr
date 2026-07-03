@@ -296,7 +296,7 @@ NOTE:  `ontap-nas-economy` 드라이버는 Docker Swarm이 여러 노드에 걸�
 * FlexGroup 볼륨은 복제가 지원되지 않습니다.
 
 
-FlexGroups 및 FlexGroups에 적합한 워크로드에 대한 자세한 내용은 https://www.netapp.com/pdf.html?item=/media/12385-tr4571pdf.pdf["NetApp FlexGroup 볼륨 모범 사례 및 구현 가이드"^]을 참조하십시오.
+FlexGroups 및 FlexGroups에 적합한 워크로드에 대한 자세한 내용은 https://www.netapp.com/pdf.html?item=/media/12385-tr4571.pdf["NetApp FlexGroup 볼륨 모범 사례 및 구현 가이드"^]을 참조하십시오.
 
 고급 기능과 대규모 확장성을 동일한 환경에서 구현하려면 Docker Volume Plugin의 여러 인스턴스를 실행할 수 있습니다. 하나는 `ontap-nas`을 사용하고 다른 하나는 `ontap-nas-economy`을 사용합니다.
 

@@ -75,11 +75,6 @@ link:https://docs.netapp.com/us-en/trident-2307/index.html["23.07"^]
  a| 
 link:https://docs.netapp.com/us-en/trident-2304/index.html["23.04"^]
 | -- | -- | 2026년 4월 
-
-
- a| 
-link:https://docs.netapp.com/us-en/trident-2301/index.html["23.01"^]
-| -- | -- | 2026년 1월 
 |===
 
 NOTE: 최신 Trident 버전 지원 일정은 https://docs.netapp.com/us-en/trident/get-help.html#trident-support-lifecycle["지원 수명 주기 페이지"]을 참조하십시오.

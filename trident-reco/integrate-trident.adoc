@@ -108,7 +108,7 @@ Amazon FSx for NetApp ONTAP을 사용하면 익숙한 NetApp 기능, 성능 및 
 
 === Azure NetApp Files 백엔드 드라이버
 
-Trident는  `azure-netapp-files` 드라이버를 사용하여 link:https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"^] 서비스를 관리합니다.
+Trident는  `azure-netapp-files` 드라이버를 사용하여 link:https://azure.microsoft.com/en-us/products/netapp/["Azure NetApp Files"^] 서비스를 관리합니다.
 
 이 드라이버 및 구성 방법에 대한 자세한 내용은 link:https://docs.netapp.com/us-en/trident/trident-use/anf.html["Azure NetApp Files용 Trident 백엔드 구성"^]에서 확인할 수 있습니다.
 

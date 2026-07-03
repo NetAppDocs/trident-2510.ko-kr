@@ -274,7 +274,7 @@ Trident용 SolidFire 스토리지 구성 모범 사례를 알아보십시오.
 
 NOTE: 최대 IOPS와 버스트 IOPS는 최대 200,000까지 설정할 수 있지만, 볼륨의 실제 최대 성능은 클러스터 사용량과 노드별 성능에 따라 제한됩니다.
 
-블록 크기와 대역폭은 IOPS 수에 직접적인 영향을 미칩니다. 블록 크기가 증가함에 따라 시스템은 더 큰 블록 크기를 처리하는 데 필요한 수준까지 대역폭을 증가시킵니다. 대역폭이 증가하면 시스템이 달성할 수 있는 IOPS 수는 감소합니다. QoS 및 성능에 대한 자세한 내용은 https://www.netapp.com/pdf.html?item=/media/10502-tr-4644pdf.pdf["SolidFire 서비스 품질"^]을 참조하십시오.
+블록 크기와 대역폭은 IOPS(초당 연산 처리량)에 직접적인 영향을 미칩니다. 블록 크기가 증가함에 따라 시스템은 더 큰 블록 크기를 처리하는 데 필요한 수준까지 대역폭을 늘립니다. 대역폭이 증가하면 시스템이 달성할 수 있는 IOPS는 감소합니다. QoS 및 성능에 대한 자세한 내용은 https://www.netapp.com/pdf.html?item=/media/10502-tr-4644.pdf["SolidFire 서비스 품질"^]을 참조하십시오.
 
 
 
@@ -304,7 +304,7 @@ CHAP 인증(시작자가 의도된 볼륨 사용자인지 확인하는 인증)�
 
 *Element 소프트웨어*
 
-* https://www.netapp.com/pdf.html?item=/media/10507-tr4639pdf.pdf["Linux용 SolidFire 구성"^]
+* https://www.netapp.com/pdf.html?item=/media/10507-tr4639.pdf["Linux용 SolidFire 구성"^]
 
 
 *NetApp HCI*
@@ -317,9 +317,9 @@ CHAP 인증(시작자가 의도된 볼륨 사용자인지 확인하는 인증)�
 
 * https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-overview.html["ONTAP의 MySQL 모범 사례"^]
 * https://www.netapp.com/pdf.html?item=/media/10510-tr-4605.pdf["SolidFire의 MySQL 모범 사례"^]
-* https://www.netapp.com/pdf.html?item=/media/10513-tr-4635pdf.pdf["NetApp SolidFire 및 Cassandra"^]
-* https://www.netapp.com/pdf.html?item=/media/10511-tr4606pdf.pdf["SolidFire의 Oracle 모범 사례"^]
-* https://www.netapp.com/pdf.html?item=/media/10512-tr-4610pdf.pdf["SolidFire의 PostgreSQL 모범 사례"^]
+* https://www.netapp.com/pdf.html?item=/media/10513-tr-4635.pdf["NetApp SolidFire 및 Cassandra"^]
+* https://www.netapp.com/pdf.html?item=/media/10511-tr4606.pdf["SolidFire의 Oracle 모범 사례"^]
+* https://www.netapp.com/pdf.html?item=/media/10512-tr-4610.pdf["SolidFire의 PostgreSQL 모범 사례"^]
 
 
 모든 애플리케이션에 특정 지침이 있는 것은 아니므로 NetApp 팀과 협력하고 https://www.netapp.com/search/["NetApp 라이브러리"^]를 사용하여 최신 문서를 찾는 것이 중요합니다.

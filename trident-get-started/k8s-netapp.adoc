@@ -59,7 +59,7 @@ NetApp HCI는 Trident에서 완벽하게 지원됩니다. Trident는 기본 NetA
 
 == Azure NetApp Files
 
-https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"^]는 NetApp이 제공하는 엔터프라이즈급 Azure 파일 공유 서비스입니다. Azure에서 기본적으로 가장 까다로운 파일 기반 워크로드를 실행할 수 있으며, NetApp에서 기대하는 성능과 풍부한 데이터 관리 기능을 제공합니다.
+https://azure.microsoft.com/en-us/products/netapp/["Azure NetApp Files"^]는 NetApp이 제공하는 엔터프라이즈급 Azure 파일 공유 서비스입니다. Azure에서 기본적으로 가장 까다로운 파일 기반 워크로드를 실행할 수 있으며, NetApp에서 기대하는 성능과 풍부한 데이터 관리 기능을 제공합니다.
 
 
 
