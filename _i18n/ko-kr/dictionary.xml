@@ -5217,7 +5217,6 @@
   <block id="a8fe789c9febc6b76736fb83c90df2b7" category="cell">생성된 볼륨에 할당할 적응형 QoS 정책 그룹입니다. 스토리지 풀 또는 백엔드별로 qosPolicy 또는 adaptiveQosPolicy 중 하나를 선택하십시오. ontap-nas-economy에서는 지원되지 않습니다.</block>
   <block id="1e8d899088cef4cd1758075ac2b63721" category="cell">스냅샷용으로 예약된 볼륨의 비율 "0"</block>
   <block id="d8d01124b8b3fe614b475ad96fca4635" category="cell"><block ref="0a236e7685e50a59df980d0a30929d6c" prefix=" " category="inline-code"></block>이<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block>인 경우,<block ref="2954e92a9b4d0e998fe4893f8141649a" prefix=" " category="inline-code"></block> ""</block>
-  <block id="8336fb38c3b943161d5d6e73af8f4a12" category="cell">LUKS 암호화를 활성화합니다. <block ref="3646c7a69a11bdd94c010bf856bda313" category="inline-link-macro-rx"></block>를 참조하십시오. SAN에만 해당됩니다.</block>
   <block id="58c09f2c9581bc7c58c32116266b6d8f" category="cell">사용할 계층화 정책<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block></block>
   <block id="8ba802b52dc84f4e82bfbbf2e2d4a807" category="cell">새 볼륨 모드입니다. *SMB 볼륨의 경우 비워 두십시오.*</block>
   <block id="484067c59b1fa950e362a90fd416c89e" category="example-title">SMB 볼륨에 대한 스토리지 클래스 구성</block>
@@ -6029,7 +6028,6 @@
   <block id="14ede6648ba5d3900803ea9064ea6f98" category="paragraph">Trident를 설치하고 몇 단계만 거치면 스토리지 리소스 관리를 시작할 수 있습니다. 시작하기 전에 <block ref="6004af307fc2eed554c42ebaa4be8446" category="inline-link-macro-rx"></block>을(를) 검토하십시오.</block>
   <block id="365f044223bbae18d908189b4742ff4c" category="paragraph"><block ref="365f044223bbae18d908189b4742ff4c" category="inline-link-macro-rx"></block></block>
   <block id="dde53589c85fa1215e4a3d3c3a0d6508" category="paragraph"><block ref="90e03a843b5d1f923d0ef6b32fbf11b0" category="inline-link-macro-rx"></block>을(를) 검토하여 설치 사전 요구 사항을 충족했는지, 그리고 사용 환경에 맞는 올바른 설치 옵션을 선택했는지 확인하십시오.</block>
-  <block id="432cd8287366758f4223f1c5245523ef" category="paragraph"><block ref="cb461850825fa08fd17f7c70933db3ad" category="inline-link-macro-rx"></block> 외에도 <block ref="fc0cdbd8defe0c7175199dd05a0f8e76" category="inline-link-macro-rx"></block>이(가) 필요합니다.</block>
   <block id="e9d36c266026dc04d43783120d0a2d1d" category="paragraph">Linux 호스트에 로그인하여 정상적으로 작동하는 <block ref="958ebeab180637e89445160bac2d22e7" category="inline-link-macro-rx"></block>를 관리하고 있는지, 그리고 필요한 권한이 있는지 확인하십시오.</block>
   <block id="6e0142dfd4a5236fbce5c22e4e30fc2b" category="paragraph">설치를 시작하기 전에 Linux 호스트에 로그인하여 작동 중인 <block ref="958ebeab180637e89445160bac2d22e7" category="inline-link-macro-rx"></block>를 관리하고 있는지, 필요한 권한이 있는지 확인합니다.</block>
   <block id="d88223d773f28ccdf21626fa17114e63" category="admonition">설치 프로그램이 성공적으로 완료되지 않거나<block ref="ce3abad3e11d6a43c5178e20a0c7d64b" prefix=" " category="inline-code"></block> <block ref="2903817a25b5de1e17a06122d71c5cf9" prefix="(" category="inline-code"></block>에 *실행 중* 상태가 표시되지 않으면 플랫폼이 설치되지 않은 것입니다. <block ref="9b017020b9d48d433ec90c548e6b5c70" prefix=" " category="inline-code"></block>를 사용하여 <block ref="0c26927b9a8e07f011a7bc7653213d74" category="inline-link-macro-rx"></block>하고 문제를 해결하세요.</block>
@@ -6061,4 +6059,7 @@
   <block id="4d7f894e8ec350a861c28ea984648f59" category="paragraph"><block ref="22ab900b028c044945b4dba56093fe8f" category="inline-link-rx"></block> 백엔드를 구성하고 사용하려면 다음이 필요합니다.</block>
   <block id="9ea1dc44c501f59786a0dd2c5ebc2d21" category="list-text">Trident AutoSupport는 개인 식별 정보(PII) 또는 개인 정보를 수집하거나 전송하지 않습니다. Trident 컨테이너 이미지 자체에는 적용되지 않는<block ref="ea14b34590cee15ec565ad8fd8feca2e" category="inline-link-rx"></block>와 함께 제공됩니다. NetApp의 데이터 보안 및 신뢰에 대한 노력에 대해 자세히 알아볼 수 있습니다<block ref="ea3b01bc03342a227ac7c6848f1e44fa" category="inline-link-rx"></block>.</block>
   <block id="4fbe662a4d7b038cf1f5fecdd31c7c01" category="list-text">Trident를<block ref="22ab900b028c044945b4dba56093fe8f" category="inline-link-rx"></block> 사용할 때 발생할 수 있는 일반적인 문제는 테넌트 및 클라이언트 암호가 권한이 부족한 앱 등록에서 제공되는 경우입니다. Trident 요구 사항의 전체 목록은 <block ref="66af37d4cd76f6bfef0a6d433e8dccd6" category="inline-link-macro-rx"></block> 구성을 참조하십시오.</block>
+  <block id="db7fc8df66e930e05282807a6ebd58f4" category="paragraph"><block ref="1feb3274d112f2cef694d133af384cac" category="inline-link-macro-rx"></block> 외에도 <block ref="fc0cdbd8defe0c7175199dd05a0f8e76" category="inline-link-macro-rx"></block>이(가) 필요합니다.</block>
+  <block id="9502f88fbe245a8b7aaf0d7523fd74d1" category="cell">LUKS 암호화를 활성화합니다. <block ref="569f9f91cdcc19909b8acbf6f423daf7" category="inline-link-macro-rx"></block>을 참조하십시오. SAN 전용입니다.</block>
+  <block id="2b9bfaa6c460e61c568715fa2f48681d" category="cell">LUKS 암호화를 활성화합니다. <block ref="0bc6221bc409edaec0edeaada1b621ce" category="inline-link-macro-rx"></block>을 참조하십시오. SAN 전용입니다.</block>
 </blocks>

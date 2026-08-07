@@ -19,6 +19,7 @@ NetApp 커뮤니티 Trident Operator에서 Red Hat OpenShift 인증 Trident Oper
 
 
 
+[[uninstall-the-netapp-trident-community-operator]]
 == NetApp Trident 커뮤니티 운영자를 제거합니다
 
 .단계
@@ -39,6 +40,7 @@ WARNING: *이 연산자에서 모든 피연산자 인스턴스 삭제*를 선택
 
 
 
+[[install-the-openshift-certified-operator]]
 == OpenShift 인증 운영자를 설치하세요
 
 .단계
@@ -52,6 +54,7 @@ image::../media/openshift-operator-05.png[설치]
 
 
 
+[[verification]]
 == 확인
 
 * 콘솔의 OperatorHub에서 새 인증 운영자가 성공적으로 설치되었는지 확인하십시오.
